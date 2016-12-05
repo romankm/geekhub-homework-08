@@ -1,0 +1,29 @@
+{% extends "@Blog/Index/layout.html.twig" %}
+
+{% block title %}
+    index action
+{% endblock %}
+
+{% block body %}
+     <H1>index action test body</H1>
+    {{ my_function() }}
+
+    {% if flag %}
+         <table border="1">
+         {% for item in items %}
+             <tr>
+                 <td>{{ item.id }}</td>
+                 <td>{{ item.name }}</td>
+                 <td>{{ item.value | round(2, 'floor') }}</td>
+                 <td>{{ item.active ? 'active' : 'inactive' }}</td>
+             </tr>
+         {% endfor %}
+         </table>
+    {% endif %}
+
+    {% embed "@Blog/Index/embeded_part.html.twig" %}
+        {% block embeded_block %}
+            Embeded test<br>
+        {% endblock %}
+    {% endembed %}
+{% endblock %}

@@ -1,0 +1,8 @@
+blog_index:
+    path:     /first
+    defaults: { _controller: BlogBundle:Index:first }
+
+blog_second:
+    path:     /second
+    defaults: { _controller: BlogBundle:Index:second }
+
